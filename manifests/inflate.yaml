@@ -4,6 +4,7 @@ metadata:
   name: inflate
   labels:
     backstage.io/kubernetes-id: rnd-ops.goreel.tech
+  namespace: default
 spec:
   replicas: 0
   selector:
@@ -14,6 +15,7 @@ spec:
       labels:
         app: inflate
         backstage.io/kubernetes-id: rnd-ops.goreel.tech
+      namespace: default
     spec:
       terminationGracePeriodSeconds: 0
       containers:
