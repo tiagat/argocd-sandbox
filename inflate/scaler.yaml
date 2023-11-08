@@ -16,9 +16,9 @@ spec:
     replicas: 1
   triggers:
     - type: prometheus
-  metadata:
-    # Required fields:
-    serverAddress: http://prometheus-server.monitoring.svc.cluster.local/metrics
-    query: scaler_gauge # Note: query must return a vector/scalar single element response
-    threshold: "5"
-    activationThreshold: "0"
+      metadata:
+        # Required fields:
+        serverAddress: http://prometheus-server.monitoring.svc.cluster.local/metrics
+        query: scaler_gauge # Note: query must return a vector/scalar single element response
+        threshold: "5"
+        activationThreshold: "0"
