@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scaler
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "3000"
+      labels:
+        app: scaler
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+        - name: scaler
+          image: tiagat/scaler:latest
+          resources:
+            requests:
+              cpu: 0.25
