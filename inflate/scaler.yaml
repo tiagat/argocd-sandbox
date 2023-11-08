@@ -11,6 +11,9 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: inflate
+  fallback:
+    failureThreshold: 3
+    replicas: 1
   triggers:
     - type: prometheus
   metadata:
