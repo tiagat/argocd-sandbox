@@ -1,24 +1,20 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
   name: inflate
-  labels:
-    backstage.io/kubernetes-id: rnd-ops.goreel.tech
+  namespace: argocd
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: inflate
-  template:
-    metadata:
-      labels:
-        app: inflate
-        backstage.io/kubernetes-id: rnd-ops.goreel.tech
-    spec:
-      terminationGracePeriodSeconds: 0
-      containers:
-        - name: inflate
-          image: public.ecr.aws/eks-distro/kubernetes/pause:3.7
-          resources:
-            requests:
-              cpu: 0.25
+  project: default
+  source:
+    repoURL: https://github.com/tiagat/argocd-sandbox
+    path: inflate
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
