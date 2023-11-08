@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metrics-server
+  name: prometheus
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,9 +11,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: monitoring
   source:
-    chart: metrics-server
-    repoURL: https://kubernetes-sigs.github.io/metrics-server/
-    targetRevision: 3.11.0
+    chart: prometheus
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 25.4.0
   syncPolicy:
     automated:
       prune: true
