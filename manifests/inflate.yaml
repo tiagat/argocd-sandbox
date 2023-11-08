@@ -6,7 +6,7 @@ metadata:
     backstage.io/kubernetes-id: rnd-ops.goreel.tech
   namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: inflate
