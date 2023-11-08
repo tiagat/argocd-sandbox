@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: keda
+  namespace: argocd
+spec:
+  destination:
+    name: keda
+    namespace: keda
+  source:
+    chart: keda
+    repoURL: https://kedacore.github.io/charts
+    targetRevision: 2.12.0
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
