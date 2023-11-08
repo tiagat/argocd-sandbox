@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: scaler
+  name: scaler-metrics
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: scaler
+      app: scaler-metrics
   template:
     metadata:
       annotations:
@@ -14,7 +14,7 @@ spec:
         prometheus.io/path: "/metrics"
         prometheus.io/port: "3000"
       labels:
-        app: scaler
+        app: scaler-metrics
     spec:
       terminationGracePeriodSeconds: 0
       containers:
