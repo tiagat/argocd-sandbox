@@ -23,3 +23,5 @@ spec:
           resources:
             requests:
               cpu: 0.25
+          ports:
+            - containerPort: 3000
