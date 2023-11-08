@@ -12,7 +12,7 @@ spec:
   minReplicaCount: 1
   maxReplicaCount: 50
   fallback:
-    failureThreshold: 3
+    failureThreshold: 1
     replicas: 1
   triggers:
     - type: prometheus
