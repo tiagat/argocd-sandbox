@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/tiagat/argocd-sandbox
-    path: manifests
+    path: applications
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
