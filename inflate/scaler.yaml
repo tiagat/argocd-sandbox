@@ -1,0 +1,21 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: inflate
+  # annotations:
+  #   scaledobject.keda.sh/transfer-hpa-ownership: "true"
+  #   autoscaling.keda.sh/paused-replicas: "0"
+  #   autoscaling.keda.sh/paused: "true"
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: inflate
+  triggers:
+    - type: prometheus
+  metadata:
+    # Required fields:
+    serverAddress: http://prometheus-server.monitoring.svc.cluster.local/metrics
+    query: scaler_gauge # Note: query must return a vector/scalar single element response
+    threshold: "5"
+    activationThreshold: "0"
