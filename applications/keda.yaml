@@ -14,6 +14,10 @@ spec:
     chart: keda
     repoURL: https://kedacore.github.io/charts
     targetRevision: 2.12.0
+    helm:
+      parameters:
+        - name: certificates.certManager.enabled
+          value: "false"
   syncPolicy:
     automated:
       prune: true
