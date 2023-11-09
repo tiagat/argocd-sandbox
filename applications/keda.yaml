@@ -18,6 +18,8 @@ spec:
       parameters:
         - name: certificates.certManager.enabled
           value: "true"
+        - name: certificates.certManager.generateCA
+          value: "true"
   syncPolicy:
     automated:
       prune: true
