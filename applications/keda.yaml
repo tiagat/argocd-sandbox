@@ -13,13 +13,13 @@ spec:
   source:
     chart: keda
     repoURL: https://kedacore.github.io/charts
-    targetRevision: 2.10.1
+    targetRevision: 2.12.0
     helm:
       parameters:
         - name: certificates.certManager.enabled
-          value: "true"
+          value: "false"
         - name: certificates.certManager.generateCA
-          value: "true"
+          value: "false"
   syncPolicy:
     automated:
       prune: true
