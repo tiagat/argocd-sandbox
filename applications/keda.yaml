@@ -13,9 +13,11 @@ spec:
   source:
     chart: keda
     repoURL: https://kedacore.github.io/charts
-    targetRevision: 2.12.0
+    targetRevision: 2.10.0
     helm:
       parameters:
+        - name: additionalAnnotations
+          value: "{ additionalAnnotations: bar }"
         - name: certificates.certManager.enabled
           value: "false"
         - name: certificates.certManager.generateCA
