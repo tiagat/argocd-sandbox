@@ -24,6 +24,5 @@ $ curl "http://localhost:3000/metrics?scaler_gauge=5"
 Build Image
 
 ```
-$ docker build -t tiagat/scaler:latest .
-$ docker image push tiagat/scaler:latest
+$ docker buildx build --platform linux/amd64 -t tiagat/scaler:latest --push .
 ```

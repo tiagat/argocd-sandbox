@@ -1,0 +1,13 @@
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMPodScrape
+metadata:
+  name: scaler-metrics-scrape
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: scaler-metrics
+  podMetricsEndpoints:
+    - port: "http"
+      path: /metrics
+      scheme: http
