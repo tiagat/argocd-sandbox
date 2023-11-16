@@ -7,13 +7,8 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: inflate
-  pollingInterval: 30
-  cooldownPeriod: 30
-  minReplicaCount: 1
-  maxReplicaCount: 50
-  fallback:
-    failureThreshold: 1
-    replicas: 1
+  pollingInterval: 300
+  minReplicaCount: 0
   triggers:
     - type: prometheus
       metadata:
