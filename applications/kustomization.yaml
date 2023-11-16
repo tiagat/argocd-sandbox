@@ -2,3 +2,5 @@ resources:
   - shared/prometheus-community.yaml
   - shared/scaler-metrics.yaml
   - shared/keda.yaml
+  - shared/keda-scaledobject.yaml
+
