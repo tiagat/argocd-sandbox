@@ -2,6 +2,8 @@ apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
   name: inflate
+  annotations:
+    autoscaling.keda.sh/paused: "true"
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
