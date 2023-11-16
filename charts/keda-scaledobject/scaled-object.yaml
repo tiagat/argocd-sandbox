@@ -10,7 +10,8 @@ spec:
     kind: Deployment
     name: keda-scaledobject
   pollingInterval: 300
-  minReplicaCount: 0
+  idleReplicaCount: 0
+  minReplicaCount: 1
   maxReplicaCount: 10
   triggers:
     - type: prometheus
