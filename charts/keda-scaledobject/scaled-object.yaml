@@ -11,11 +11,13 @@ spec:
     name: keda-scaledobject
   pollingInterval: 300
   minReplicaCount: 0
+  maxReplicaCount: 10
   triggers:
     - type: prometheus
       metadata:
         serverAddress: http://prometheus-server.monitoring.svc.cluster.local
-        query: sum(up{container="cert-manager-controller"})
+        metricName: up
+        query: sum(up{container="nonexist-container"})
         threshold: "1000"
         activationThreshold: "0"
         ignoreNullValues: "true"
