@@ -2,21 +2,19 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: keda-scaledobject
-  namespace: keda
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  namespace: argocd
 spec:
-  destination:
-    namespace: keda
-    server: https://kubernetes.default.svc
   project: default
   source:
-    path: charts/keda-scaledobject
     repoURL: https://github.com/tiagat/argocd-sandbox
+    path: charts/keda-scaledobject
     targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true

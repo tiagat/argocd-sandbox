@@ -15,5 +15,4 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
         - name: keda-scaledobject
-          image: keda-scaledobject
-
+          image: public.ecr.aws/eks-distro/kubernetes/pause:3.9
