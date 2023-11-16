@@ -16,7 +16,6 @@ spec:
     targetRevision: 2.9.4
     helm:
       parameters:
-        - prometheus.metricServer.enabled: true
   syncPolicy:
     automated:
       prune: true
