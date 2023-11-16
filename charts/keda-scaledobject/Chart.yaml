@@ -1,8 +1,0 @@
-apiVersion: v2
-name: keda-scaledobject
-description: Deployment with zero replicas for inject KEDA ScaledObject resource
-icon: https://raw.githubusercontent.com/kedacore/keda/main/images/keda-logo-500x500-white.png
-
-# This is the chart version. This version number should be incremented each time you make changes
-# to the chart and its templates, including the app version.
-version: 0.1.1

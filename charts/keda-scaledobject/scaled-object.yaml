@@ -1,14 +1,14 @@
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
-  name: {{ .Release.Name }}
+  name: keda-scaledobject
   annotations:
     autoscaling.keda.sh/paused: "true"
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ .Release.Name }}
+    name: keda-scaledobject
   pollingInterval: 300
   minReplicaCount: 0
   triggers:

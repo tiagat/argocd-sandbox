@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: keda-scaledobject
 spec:
   replicas: 0
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: keda-scaledobject
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: keda-scaledobject
     spec:
       terminationGracePeriodSeconds: 0
       containers:
-        - name: {{ .Release.Name }}
-          image: {{ .Values.image }}
+        - name: keda-scaledobject
+          image: keda-scaledobject
 
