@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     path: charts/keda-scaledobject
-    repoURL: git@github.com:tiagat/argocd-sandbox.git
-    targetRevision: master
+    repoURL: https://github.com/tiagat/argocd-sandbox
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
