@@ -15,6 +15,7 @@ spec:
     - type: prometheus
       metadata:
         serverAddress: http://prometheus-server.monitoring.svc.cluster.local
-        query: scaler_gauge
-        threshold: "5"
+        query: sum(up{container="cert-manager-controller"})
+        threshold: "1000"
         activationThreshold: "0"
+        ignoreNullValues: "true"
