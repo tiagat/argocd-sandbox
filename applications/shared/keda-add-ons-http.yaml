@@ -13,8 +13,8 @@ spec:
   source:
     chart: keda-add-ons-http
     repoURL: https://kedacore.github.io/charts
-    # targetRevision: 0.5.0
-    targetRevision: 0.5.3
+    # targetRevision: 0.5.3
+    targetRevision: 0.5.0
   syncPolicy:
     automated:
       prune: true
