@@ -14,7 +14,7 @@ spec:
     chart: keda-add-ons-http
     repoURL: https://kedacore.github.io/charts
     # targetRevision: 0.5.0
-    targetRevision: 0.5.1
+    targetRevision: 0.5.3
   syncPolicy:
     automated:
       prune: true
