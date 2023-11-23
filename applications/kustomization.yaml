@@ -3,4 +3,5 @@ resources:
   - shared/scaler-metrics.yaml
   - shared/keda.yaml
   - shared/keda-scaledobject.yaml
+  - shared/keda-add-ons-http.yaml
 
