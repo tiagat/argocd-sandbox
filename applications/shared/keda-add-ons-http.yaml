@@ -15,6 +15,16 @@ spec:
     repoURL: https://kedacore.github.io/charts
     # targetRevision: 0.5.3
     targetRevision: 0.5.0
+    helm:
+      parameters:
+        - name: images.operator
+          value: ghcr.io/kedacore/http-add-on-operator
+        - name: images.scaler
+          value: ghcr.io/kedacore/http-add-on-scaler
+        - name: images.interceptor
+          value: ghcr.io/kedacore/http-add-on-interceptor
+        - name: images.tag
+          value: 0.5.0
   syncPolicy:
     automated:
       prune: true
